@@ -7,22 +7,37 @@ import java.util.List;
 
 public class MatKulAjar implements User.userDetails{
     private MataKuliah matKulNgajar;
-    private PresensiStaff listPresensiStaff;
+    private List<PresensiStaff> listPresensiStaff;
 
-    public MatKulAjar(MataKuliah matKulNgajar, PresensiStaff listPresensiStaff){
+    //constructor
+    public MatKulAjar(MataKuliah matKulNgajar){
         this.matKulNgajar = matKulNgajar;
-        this.listPresensiStaff = listPresensiStaff;
+        this.listPresensiStaff = new ArrayList<>();
     }
+
+    //add to list presensi
+    public void addPresensiStaff(PresensiStaff presensiStaff){this.listPresensiStaff.add(presensiStaff);}
+
     //getter
     public MataKuliah getMatKulNgajar(){return this.matKulNgajar;}
-    public PresensiStaff getListPresensiStaff(){return this.listPresensiStaff;}
+    public List<PresensiStaff> getListPresensiStaff(){return this.listPresensiStaff;}
+
     //setter
     public void setMatKulNgajar(MataKuliah matKulNgajar){this.matKulNgajar = matKulNgajar;}
-    public void setListPresensiStaff(PresensiStaff listPresensiStaff){this.listPresensiStaff = listPresensiStaff;}
+    public void setListPresensiStaff(List<PresensiStaff> listPresensiStaff){this.listPresensiStaff = listPresensiStaff;}
 
+    //interface
     @Override
     public String toString(){
-        return matKulNgajar.getNama() + "\nPresensi Staff: " + listPresensiStaff.getStatus()+", "+listPresensiStaff.getTanggal()+", "+listPresensiStaff.getJam()+"\nKode matkul: "+matKulNgajar.getKode()+"\nSKS matkul : "+matKulNgajar.getSks();
+        String result = "";
+        result += matKulNgajar.getNama() + "\n";
+        result += "Presensi Staff : \n";
+        for(PresensiStaff list : getListPresensiStaff()){
+            result += list.getStatus()+", "+list.getTanggal()+", "+list.getJam()+"\n";
+        }
+        result += "Kode Matkul : "+matKulNgajar.getKode()+"\n";
+        result += "SKS Matkul : "+matKulNgajar.getSks();
+        return result;
     }
 }
 

@@ -6,19 +6,18 @@ public class Presensi {
     private String tanggal;
     private int status;
 
+    //constructor
     public Presensi (String tanggal, int status){
         this.tanggal = tanggal;
         this.status = status;
     }
+
     //getter
     public String getTanggal(){return this.tanggal;}
-    public StatusHadir getStatus(){
-        if (status == 0){
-            return StatusHadir.HADIR;
-        }else{
-            return StatusHadir.ALPHA;
-        }
+    public int getStatus(){
+        return this.status;
     }
+
     //setter
     public void setTanggal(String tanggal){this.tanggal = tanggal;}
     public void setStatus(int status){this.status = status;}

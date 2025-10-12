@@ -7,15 +7,18 @@ public class MataKuliah implements User.userDetails {
     private String nama;
     private int sks;
 
+    //constructor
     public MataKuliah (String kode, String nama, int sks){
         this.kode = kode;
         this.nama = nama;
         this.sks = sks;
     }
+
     //getter
     public String getKode(){return this.kode;}
     public String getNama(){return this.nama;}
     public int getSks(){return this.sks;}
+
     //setter
     public void setKode(String kode){this.kode = kode;}
     public void setNama(String nama){this.nama = nama;}

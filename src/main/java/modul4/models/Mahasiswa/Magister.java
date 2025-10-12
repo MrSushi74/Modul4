@@ -9,19 +9,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Magister extends Mahasiswa implements User.userDetails{
-    private MatKulAmbil mataKuliah;
+    private List<MatKulAmbil> mataKuliah;
     private String judulPenelitianThesis;
-    public Magister( String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan, MatKulAmbil mataKuliah, String judulPenelitianThesis){
+
+    //constructor
+    public Magister( String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan, String judulPenelitianThesis){
         super( nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
-        this.mataKuliah = mataKuliah;
+        this.mataKuliah = new ArrayList<>();
         this.judulPenelitianThesis = judulPenelitianThesis;
     }
+
+    //add to MatKulAmbil
+    public void addMatKulAmbil(MatKulAmbil matKulAmbil){this.mataKuliah.add(matKulAmbil);}
+
     //getter
-    public MatKulAmbil getMatKulAmbil (){return this.mataKuliah;}
+    public List<MatKulAmbil> getMatKulAmbil (){return this.mataKuliah;}
     public String getJudulPenelitianThesis (){return this.judulPenelitianThesis;}
+
     //setter
-    public void setMatkul (MatKulAmbil mataKuliah){this.mataKuliah = mataKuliah;}
+    public void setMatkul (List<MatKulAmbil> mataKuliah){this.mataKuliah = mataKuliah;}
+
     //interface
+    @Override
     public String toString(){
         String result = "";
         result += "Nama: " + this.getNama() + "\n";
@@ -32,7 +41,10 @@ public class Magister extends Mahasiswa implements User.userDetails{
         result += "NIM: " + this.getNim() + "\n";
         result += "User Type: " + UserType.MAHASISWA + "\n";
         result += "Kode Jurusan: " + this.getKodeJurusan() + "\n";
-        result += "Mata Kuliah: " + this.getMatKulAmbil() + "\n";
+        result += "Mata Kuliah : \n";
+        for (MatKulAmbil matKul : getMatKulAmbil()){
+            result += matKul.toString() + "\n";
+        }
         result += "Judul Penelitian Thesis: "+ this.getJudulPenelitianThesis() + "\n";
         return result;
     }

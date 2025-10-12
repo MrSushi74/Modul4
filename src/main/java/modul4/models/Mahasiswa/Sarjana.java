@@ -5,16 +5,23 @@ import modul4.models.UserType;
 
 import java.util.*;
 public class Sarjana extends Mahasiswa implements User.userDetails{
-    private MatKulAmbil mataKuliah;
+    private List<MatKulAmbil> mataKuliah;
+
     //constructor
-    public  Sarjana (String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan, MatKulAmbil mataKuliah){
+    public  Sarjana (String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan){
         super(nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
-        this.mataKuliah = mataKuliah;
+        this.mataKuliah = new ArrayList<>();
     }
+
+    //add to MatKulAmbil
+    public void addMatKulAmbil(MatKulAmbil matKulAmbil){this.mataKuliah.add(matKulAmbil);}
+
     //getter
-    public MatKulAmbil getMatKulAmbil (){return this.mataKuliah;}
+    public List<MatKulAmbil> getMatKulAmbil (){return this.mataKuliah;}
+
     //setter
-    public void setMatKulAmbil (MatKulAmbil mataKuliah){this.mataKuliah = mataKuliah;}
+    public void setMatKulAmbil (List<MatKulAmbil> mataKuliah){this.mataKuliah = mataKuliah;}
+
 
     //interface
     @Override
@@ -28,7 +35,10 @@ public class Sarjana extends Mahasiswa implements User.userDetails{
         result += "NIM: " + this.getNim() + "\n";
         result += "User Type: " + UserType.MAHASISWA + "\n";
         result += "Kode Jurusan: " + this.getKodeJurusan() + "\n";
-        result += "Mata Kuliah: " + this.getMatKulAmbil() + "\n";
+        result += "Mata Kuliah : \n";
+        for (MatKulAmbil matkul : getMatKulAmbil()){
+            result += matkul.toString() + "\n";
+        }
         return result;
     }
 }

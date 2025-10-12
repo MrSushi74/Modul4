@@ -8,6 +8,7 @@ public abstract class User {
     private String telepon;
     private UserType userType;
 
+    //constructor
     public User(UserType userType,String nama, String alamat, String tempatLahir, String tanggalLahir, String telepon){
         this.nama = nama;
         this.alamat = alamat;
@@ -15,6 +16,7 @@ public abstract class User {
         this.tanggalLahir = tanggalLahir;
         this.telepon = telepon;
     }
+
     //getter
     public String getNama(){
         return this.nama;
@@ -35,6 +37,7 @@ public abstract class User {
         return tempatLahir + ", " + tanggalLahir;
     };
     public UserType getType(){return this.userType;}
+
     //setter
     public void setName(String nama){this.nama = nama;}
     public void setAlamat(String alamat){this.alamat = alamat;}
