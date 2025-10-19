@@ -3,6 +3,7 @@ package modul4;
 import modul4.models.Lists.*;
 import modul4.models.Mahasiswa.Dokter;
 import modul4.models.Mahasiswa.Magister;
+import modul4.models.Mahasiswa.Mahasiswa;
 import modul4.models.Mahasiswa.Sarjana;
 import modul4.models.Staff.Dosen;
 import modul4.models.Staff.DosenHonorer;
