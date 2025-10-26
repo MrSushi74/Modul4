@@ -9,16 +9,13 @@ public class DosenTetap extends Dosen implements User.userDetails{
     private double salary;
 
     //constructor
-    public DosenTetap (String NIK, String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String departemen, MatKulAjar matkulNgajar, double salary){
+    public DosenTetap (String NIK, String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String departemen, double salary){
         super(UserType.DOSEN_TETAP, NIK, nama, tempatLahir,tanggalLahir,alamat,telepon, departemen);
         this.salary = salary;
     }
 
     //getter
     public double getSalary (){return this.salary;}
-
-    //setter
-    public void setSalary (double salary){this.salary = salary;}
 
     //interface
     @Override
@@ -31,7 +28,7 @@ public class DosenTetap extends Dosen implements User.userDetails{
         result += "Tanggal Lahir: " + this.getTanggalLahir() + "\n";
         result += "Alamat: " + this.getAlamat() + "\n";
         result += "Telepon: " + this.getTelepon() + "\n";
-        result += "User Type: " + UserType.DOSEN_TETAP + "\n";
+        result += "User Type: " + this.getTypeToString() + "\n";
         result += "Salary: " + this.getSalary() + "\n";
         result += "Mata Kuliah: ";
         for(MatKulAjar list : getMatKulNgajar()){

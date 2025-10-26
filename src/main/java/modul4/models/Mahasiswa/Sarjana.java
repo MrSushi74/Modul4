@@ -9,7 +9,7 @@ public class Sarjana extends Mahasiswa implements User.userDetails{
 
     //constructor
     public  Sarjana (String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan){
-        super(nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
+        super(UserType.MAHASISWA, nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
         this.mataKuliah = new ArrayList<>();
     }
 
@@ -19,13 +19,9 @@ public class Sarjana extends Mahasiswa implements User.userDetails{
     //getter
     public List<MatKulAmbil> getMatKulAmbil (){return this.mataKuliah;}
 
-    //setter
-    public void setMatKulAmbil (List<MatKulAmbil> mataKuliah){this.mataKuliah = mataKuliah;}
-
-
     //interface
     @Override
-    public  String toString(){
+    public String toString(){
         String result = "";
         result += "Nama: " + this.getNama() + "\n";
         result += "Tempat Lahir: " + this.getTempatLahir() + "\n";

@@ -13,7 +13,7 @@ public class Dokter extends Mahasiswa implements User.userDetails{
 
     //constructor
     public Dokter(String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan, double nilaiSidang1, double nilaiSidang2, double nilaiSidang3, String judulPenelitian){
-        super(nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
+        super(UserType.MAHASISWA, nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
         this.nilaiSidang1 = nilaiSidang1;
         this.nilaiSidang2 = nilaiSidang2;
         this.nilaiSidang3 = nilaiSidang3;
@@ -25,12 +25,6 @@ public class Dokter extends Mahasiswa implements User.userDetails{
     public double getNilaiSidang1(){return this.nilaiSidang1;}
     public double getNilaiSidang2(){return this.nilaiSidang2;}
     public double getNilaiSidang3(){return this.nilaiSidang3;}
-
-    //setter
-    public void setJudulPenelitian(String judulPenelitian){this.judulPenelitian = judulPenelitian;}
-    public void setNilaiSidang1(double nilaiSidang1){this.nilaiSidang1 = nilaiSidang1;}
-    public void setNilaiSidang2(double nilaiSidang2){this.nilaiSidang2 = nilaiSidang2;}
-    public void setNilaiSidang3(double nilaiSidang3){this.nilaiSidang3 = nilaiSidang3;}
 
     //interface
     @Override

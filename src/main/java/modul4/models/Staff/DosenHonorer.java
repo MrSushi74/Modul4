@@ -16,9 +16,6 @@ public class DosenHonorer extends Dosen implements User.userDetails{
     //getter
     public String getHonorPerSKS(){return this.honorPerSKS;}
 
-    //setter
-    public void setHonorPerSKS(String honorPerSKS){this.honorPerSKS = honorPerSKS;}
-
     //interface
     @Override
     public String toString(){

@@ -10,16 +10,20 @@ import modul4.models.Staff.DosenHonorer;
 import modul4.models.Staff.DosenTetap;
 import modul4.models.Staff.Karyawan;
 import modul4.models.UserType;
+import modul4.view.MenuView;
 
 public class App {
     public static void main(String[] args) {
+        MenuView menuView = new MenuView();
+
 
         //Sarjana
+
+
         MataKuliah pbo = new MataKuliah("PBO","Pemrograman Berbasis Objek", 4);
         Presensi presensiMahasiswa = new Presensi("2025-10-10",1);
         MatKulAmbil matKulDiambilSarjana = new MatKulAmbil(pbo,80,80,80);
         Sarjana mahasiswaSarjana = new Sarjana("James","jakarta","2005-10-20","Jl Passanggrahan VII No.19","085880280203","1124022","IF");
-        matKulDiambilSarjana.addPresensi(presensiMahasiswa);
         mahasiswaSarjana.addMatKulAmbil(matKulDiambilSarjana);
 
         //Magister
@@ -27,7 +31,6 @@ public class App {
         Presensi presensiMagister = new Presensi("2025-10-1",0);
         MatKulAmbil matKulDiambilMagister = new MatKulAmbil(PKN,90,95,100);
         Magister mahasiswaMagister = new Magister("David","Bandung","2006-8-14","Jl MekarWangi V No.7","084572940457","1124022","DKV","Pengembangan desain komunikasi visual untuk promosi pariwisata");
-        matKulDiambilMagister.addPresensi(presensiMagister);
         mahasiswaMagister.addMatKulAmbil(matKulDiambilMagister);
         mahasiswaMagister.addMatKulAmbil(matKulDiambilSarjana);
 
@@ -47,7 +50,7 @@ public class App {
         dosen.addMatKulNgajar(matKulNgajarStraGol);
 
         //Dosen Tetap
-        DosenTetap dosenTetap = new DosenTetap("3273056010900009", "Ken", "Bandung","1990-05-30","Jl. Summarecon X No.16","085880280203","MG", matKulNgajarPKN,80000000);
+        DosenTetap dosenTetap = new DosenTetap("3273056010900009", "Ken", "Bandung","1990-05-30","Jl. Summarecon X No.16","085880280203","MG",80000000);
         dosenTetap.addMatKulNgajar(matKulNgajarPKN);
 
         //Dosen Honorer
@@ -58,12 +61,7 @@ public class App {
         Karyawan karyawan = new Karyawan("3273056010900009", "Ken","Bandung","1990-05-30","Jl. Summarecon X No.16","085880280203", "10000000", listPresensiStaff3);
 
         //result
-        System.out.println(mahasiswaSarjana.toString());
-        System.out.println(mahasiswaMagister.toString());
-        System.out.println(mahasiswaDokter.toString());
-        System.out.println(dosen.toString());
-        System.out.println(dosenTetap.toString());
-        System.out.println(dosenHonorer.toString());
+        menuView.render();
 
     }
 }

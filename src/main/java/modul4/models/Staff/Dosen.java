@@ -13,7 +13,7 @@ public class Dosen extends Staff implements User.userDetails {
 
     //constructor
     public Dosen (UserType userType, String NIK, String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String departemen) {
-        super(NIK, nama, tempatLahir, tanggalLahir, alamat, telepon);
+        super(UserType.STAFF,NIK, nama, tempatLahir, tanggalLahir, alamat, telepon);
         this.departemen = departemen;
         this.matKulNgajar = new ArrayList<>();
     }

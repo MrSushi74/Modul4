@@ -7,7 +7,7 @@ public class Staff extends User implements User.userDetails {
     private String NIK;
 
     //constructor
-    public Staff(String NIK,String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon){
+    public Staff(UserType userType, String NIK,String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon){
         super(UserType.STAFF, nama,tempatLahir,tanggalLahir,alamat,telepon);
         this.NIK = NIK;
     }

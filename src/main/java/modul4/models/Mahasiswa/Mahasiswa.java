@@ -8,7 +8,7 @@ public class Mahasiswa extends User {
     private String kodeJurusan;
 
     //constructor
-    public Mahasiswa(String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan){
+    public Mahasiswa(UserType userType, String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan){
         super(UserType.MAHASISWA, nama, tempatLahir, tanggalLahir, alamat, telepon);
         this.nim = nim;
         this.kodeJurusan = kodeJurusan;
@@ -21,9 +21,5 @@ public class Mahasiswa extends User {
     public String getKodeJurusan(){
         return this.kodeJurusan;
     }
-
-    //setter
-    public void setNim(String nim){this.nim = nim;}
-    public void setKodeJurusan(String kodeJurusan){this.kodeJurusan = kodeJurusan;}
 
 }

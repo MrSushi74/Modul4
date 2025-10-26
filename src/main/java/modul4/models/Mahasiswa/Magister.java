@@ -14,7 +14,7 @@ public class Magister extends Mahasiswa implements User.userDetails{
 
     //constructor
     public Magister( String nama, String tempatLahir, String tanggalLahir, String alamat, String telepon, String nim, String kodeJurusan, String judulPenelitianThesis){
-        super( nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
+        super(UserType.MAHASISWA, nama, tempatLahir, tanggalLahir, alamat, telepon, nim, kodeJurusan);
         this.mataKuliah = new ArrayList<>();
         this.judulPenelitianThesis = judulPenelitianThesis;
     }

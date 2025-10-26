@@ -15,6 +15,7 @@ public abstract class User {
         this.tempatLahir = tempatLahir;
         this.tanggalLahir = tanggalLahir;
         this.telepon = telepon;
+        this.userType = userType;
     }
 
     //getter
@@ -37,13 +38,20 @@ public abstract class User {
         return tempatLahir + ", " + tanggalLahir;
     };
     public UserType getType(){return this.userType;}
-
-    //setter
-    public void setName(String nama){this.nama = nama;}
-    public void setAlamat(String alamat){this.alamat = alamat;}
-    public void setTempatLahir(String tempatLahir){this.tempatLahir = tempatLahir;}
-    public void setTanggalLahir(String tanggalLahir){this.tanggalLahir = tanggalLahir;}
-    public void setTelepon(String telepon){this.telepon = telepon;}
+    public String getTypeToString(){
+        switch (userType){
+            case MAHASISWA :
+                return "mahasiswa";
+            case DOSEN_TETAP :
+                return "dosen tetap";
+            case DOSEN_HONORER :
+                return "dosen honorer";
+            case STAFF :
+                return "staff";
+            default :
+                return "user";
+        }
+    }
 
     //interface
     public interface userDetails {
